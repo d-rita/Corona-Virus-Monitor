@@ -1,22 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
 
-class ResultsTable extends Component{
-    constructor(props){
-        super(props);
-        this.state = {}
-    }
+const ResultsTable = (props) => {
+    const { countryData } = props;
 
-    componentDidMount(){
-        fetch('https://api.covid19api.com/summary')
-        .then(res => res.json())
-        .then(data => console.log(data))
-    }
-
-    render(){
-        return(
-            <div></div>
-        )
-    }
+    const tableRows = countryData.map((country) => {
+        return (
+            <tr>
+                <td>{country.Country}</td>
+                <td>{country.TotalConfirmed}</td>
+                <td>{country.TotalDeaths}</td>
+                <td>{country.TotalRecovered}</td>
+            </tr>
+        );
+    })
+    return(
+        <div className="countryStatsSection">
+            <table className="statsTable">
+                <caption>Individual Country Statistics</caption>
+                <thead>
+                    <tr>
+                        <th sortable>Country</th>
+                        <th>Cases</th>
+                        <th>Deaths</th>
+                        <th>Recovered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {tableRows}
+                </tbody>
+            </table>
+        </div>
+    )
 }
 
 export default ResultsTable;

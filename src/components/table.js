@@ -1,9 +1,13 @@
 import React from "react";
+import Search from "./Search";
 
 const ResultsTable = (props) => {
-    const { countryData } = props;
+    const { countryData, search } = props;
+
+    
 
     const tableRows = countryData.map((country) => {
+        
         return (
             <tr>
                 <td>{country.Country}</td>
@@ -14,22 +18,26 @@ const ResultsTable = (props) => {
         );
     })
     return(
+        <div className="container">
+        <Search search={search}/>
         <div className="countryStatsSection">
-            <table className="statsTable">
+            <table id="statsTable">
                 <caption>Individual Country Statistics</caption>
                 <thead>
                     <tr>
-                        <th sortable>Country</th>
+                        <th>Country</th>
                         <th>Cases</th>
                         <th>Deaths</th>
                         <th>Recovered</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {tableRows}
+                {tableRows}
+                    
                 </tbody>
             </table>
         </div>
+    </div>
     )
 }
 

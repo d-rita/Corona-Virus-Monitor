@@ -34,9 +34,12 @@ body{
   align-items: flex-start;
 }
 
-.countryStatsSection{
-  max-width: fit-content;
+.container{
+  max-width: 70%;
   margin: 0 auto;
+}
+
+.countryStatsSection{
   /* background-color: chocolate; */
   padding-right: 4%;
   padding-left: 4%;
@@ -44,17 +47,21 @@ body{
   color: #fff4f4;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  opacity: 1;
+ /* margin-top: 2%; */
 }
 
-.statsTable{
+#statsTable{
   padding: 1%;
   margin: 0 auto;
-  
   border-radius: 10px;
   /* background-color: #fff4f4; */
   border: 1.5px solid #a288a6;
   /* background-color: blue; */
+}
+
+#statsTable tr:hover{
+  color: #3d323f;
+  background-color: #f1f1f1;
 }
 th{
   /* background-color: red; */
@@ -80,3 +87,15 @@ caption {
   
 }
 
+.searchSection{
+  margin: 0 auto;
+  text-align: right;
+  padding-top: 2%;
+}
+
+#searchBar{
+  width: 27%;
+  padding: 2%;
+  font-size: 110%;
+  border-radius: 10px;
+}

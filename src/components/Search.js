@@ -1,8 +1,13 @@
 import React from 'react';
 
-const Search = () => {
+const Search = (props) => {
+
+    const { search } = props;
     return (
-        <input type="text" placeholder="Search" />
+        <div className="searchSection">
+            <input type="text" id="searchBar" onChange={search} placeholder="Search for country" />
+        </div>
+      
     )
 }
 

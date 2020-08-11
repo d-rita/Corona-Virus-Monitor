@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ResultsTable from "./Table";
 import GlobalCard from "./Card";
-import Search from "./Search";
+
 
 
 class Home extends Component{
@@ -32,14 +32,34 @@ class Home extends Component{
             })
         })
     }
+    searchRows() {
+        let searchInput = document.getElementById('searchBar');
+        let searchValue = searchInput.value.toLowerCase();
+        let table = document.getElementById('statsTable');
+        let rows = table.getElementsByTagName('tr');
+
+        for (let i = 0; i < rows.length; i++){
+            let td = rows[i].getElementsByTagName('td')[0];
+            if (td){
+                console.log(td.innerText);
+                let value = td.textContent || td.innerText;
+                if (value.toLowerCase().indexOf(searchValue) > -1) {
+                    rows[i].style.display = "";
+                  } else {
+                    rows[i].style.display = "none";
+                  }
+            }
+        }
+    }
+
+
 
     render(){
         const { totalCases, totalRecovered, totalDead, countries} = this.state
         return(
             <div>
-                <GlobalCard cases={totalCases} recovered={totalRecovered} dead={totalDead}/>
-                <Search />
-                <ResultsTable  countryData={countries} />
+                <GlobalCard cases={totalCases} recovered={totalRecovered} dead={totalDead}/>       
+                <ResultsTable  countryData={countries} search={this.searchRows}/>
             </div>
         )
     }

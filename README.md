@@ -8,3 +8,5 @@ Create a monitoring dashboard for corona virus, using this [API](https://documen
 - User should be able to view a list of statistics per country (cases, deaths, recovered).
 - User should be able to search for countries.
 - User should be able to rank countries in order.
+
+

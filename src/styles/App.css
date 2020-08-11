@@ -1,3 +1,82 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0;
 }
+body{
+  margin: 0 auto;
+  width: 100%;
+  background-color: hsl(291, 12%, 22%);
+  color: #3d323f;;
+}
+
+.header{
+  margin: 0 auto;
+  max-width: fit-content;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 130%;
+  color: #fff4f4;;
+}
+
+.globalCard{
+  background-color: hsl(0, 100%, 98%);
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+  border-radius: 10px;
+  border: 1.5px solid #a288a6;
+  padding: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.countryStatsSection{
+  max-width: fit-content;
+  margin: 0 auto;
+  /* background-color: chocolate; */
+  padding-right: 4%;
+  padding-left: 4%;
+  padding-bottom: 1.5%;
+  color: #fff4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 1;
+}
+
+.statsTable{
+  padding: 1%;
+  margin: 0 auto;
+  
+  border-radius: 10px;
+  /* background-color: #fff4f4; */
+  border: 1.5px solid #a288a6;
+  /* background-color: blue; */
+}
+th{
+  /* background-color: red; */
+  padding: 20px;
+  text-align: left; 
+  padding-right: 30px;
+}
+
+td {
+  /* background-color: aquamarine; */
+  padding: 10px;
+  text-align: left; 
+  /* padding-right: 30px;   
+  padding-top: 10px; */
+}
+
+caption {
+  font-size: 27px;  
+  margin-top: 20px;
+  text-align: left;
+  /* text-transform: u; */
+  margin-bottom: 20px;
+  
+}
+

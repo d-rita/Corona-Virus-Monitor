@@ -59,6 +59,12 @@ body{
   /* background-color: blue; */
 }
 
+tr > th{
+  background-color: #3d323f;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
 #statsTable tr:hover{
   color: #3d323f;
   background-color: #f1f1f1;

@@ -19,7 +19,6 @@ class Home extends Component{
         fetch('https://api.covid19api.com/summary')
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             const { 
                 TotalDeaths, TotalConfirmed, TotalRecovered 
             } = data.Global;
@@ -32,6 +31,7 @@ class Home extends Component{
             })
         })
     }
+
     searchRows() {
         let searchInput = document.getElementById('searchBar');
         let searchValue = searchInput.value.toLowerCase();
@@ -41,7 +41,6 @@ class Home extends Component{
         for (let i = 0; i < rows.length; i++){
             let td = rows[i].getElementsByTagName('td')[0];
             if (td){
-                console.log(td.innerText);
                 let value = td.textContent || td.innerText;
                 if (value.toLowerCase().indexOf(searchValue) > -1) {
                     rows[i].style.display = "";
@@ -51,8 +50,6 @@ class Home extends Component{
             }
         }
     }
-
-
 
     render(){
         const { totalCases, totalRecovered, totalDead, countries} = this.state

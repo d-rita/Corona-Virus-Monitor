@@ -4,19 +4,17 @@ import Search from "./Search";
 const ResultsTable = (props) => {
     const { countryData, search } = props;
 
-    
-
-    const tableRows = countryData.map((country) => {
-        
+    const tableRows = countryData.map((country) => {   
         return (
-            <tr>
+            <tr key={country.CountryCode}>
                 <td>{country.Country}</td>
                 <td>{country.TotalConfirmed}</td>
                 <td>{country.TotalDeaths}</td>
                 <td>{country.TotalRecovered}</td>
             </tr>
         );
-    })
+    });
+
     return(
         <div className="container">
         <Search search={search}/>
@@ -32,8 +30,7 @@ const ResultsTable = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                {tableRows}
-                    
+                {tableRows} 
                 </tbody>
             </table>
         </div>

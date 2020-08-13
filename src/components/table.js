@@ -1,5 +1,6 @@
 import React from "react";
 import Search from "./Search";
+import { formatNumber } from "../utils/formatNumber";
 
 const ResultsTable = (props) => {
     const { countryData, search } = props;
@@ -8,9 +9,9 @@ const ResultsTable = (props) => {
         return (
             <tr key={country.CountryCode}>
                 <td>{country.Country}</td>
-                <td>{country.TotalConfirmed}</td>
-                <td>{country.TotalDeaths}</td>
-                <td>{country.TotalRecovered}</td>
+                <td>{formatNumber(country.TotalConfirmed)}</td>
+                <td>{formatNumber(country.TotalDeaths)}</td>
+                <td>{formatNumber(country.TotalRecovered)}</td>
             </tr>
         );
     });

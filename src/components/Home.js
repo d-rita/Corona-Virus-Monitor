@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import ResultsTable from "./Table";
 import GlobalCard from "./Card";
-
-
+import { formatNumber } from "../utils/formatNumber";
 
 class Home extends Component{
     constructor(props){
@@ -24,9 +23,9 @@ class Home extends Component{
             } = data.Global;
 
             this.setState({
-                totalCases: TotalConfirmed,
-                totalDead: TotalDeaths,
-                totalRecovered: TotalRecovered,
+                totalCases: formatNumber(TotalConfirmed),
+                totalDead: formatNumber(TotalDeaths),
+                totalRecovered: formatNumber(TotalRecovered),
                 countries: [...data.Countries]
             })
         })

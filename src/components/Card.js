@@ -4,18 +4,18 @@ const GlobalCard = (props) => {
     const { cases, recovered, dead } = props;
     return (
         <div className="globalCard">
-            <div class="globalHeader">
+            <div className="globalHeader">
                 <h2>Worldwide</h2>
             </div>
-            <div class="globalStat">
+            <div className="globalStat">
                 <h4>Cases</h4> 
                 <span>{cases}</span>
             </div>
-            <div class="globalStat">
+            <div className="globalStat">
                 <h4>Deaths</h4>
                 <span>{dead}</span>
             </div>
-            <div class="globalStat">
+            <div className="globalStat">
                 <h4>Recovered</h4>
                 <span>{recovered}</span>
             </div>

@@ -10,8 +10,11 @@ class Home extends Component{
             totalCases: 0,
             totalRecovered: 0,
             totalDead: 0,
-            countries: []
+            countries: [],
+            cache: []
         }
+
+        this.searchRows = this.searchRows.bind(this)
     }
 
     componentDidMount(){
@@ -26,29 +29,35 @@ class Home extends Component{
                 totalCases: formatNumber(TotalConfirmed),
                 totalDead: formatNumber(TotalDeaths),
                 totalRecovered: formatNumber(TotalRecovered),
-                countries: [...data.Countries]
+                countries: [...data.Countries],
+                cache: [...data.Countries]
             })
+
         })
     }
 
-    searchRows() {
-        let searchInput = document.getElementById('searchBar');
-        let searchValue = searchInput.value.toLowerCase();
-        let table = document.getElementById('statsTable');
-        let rows = table.getElementsByTagName('tr');
+    searchRows(e) {
+        const { countries, cache } = this.state;
+        if (e.target.value === ''){
+            this.setState({
+                countries: cache
+            });
+        } else {
+            let searchValue = e.target.value.toLowerCase();
+            let result = [];
 
-        for (let i = 0; i < rows.length; i++){
-            let td = rows[i].getElementsByTagName('td')[0];
-            if (td){
-                let value = td.textContent || td.innerText;
-                if (value.toLowerCase().indexOf(searchValue) > -1) {
-                    rows[i].style.display = "";
-                  } else {
-                    rows[i].style.display = "none";
-                  }
+            for (let i=0; i < countries.length; i++ ){
+                let value = countries[i]['Country'].toLowerCase();
+                if (value.indexOf(searchValue) > -1) {
+                    result.push(countries[i]);
+                }
+                this.setState({
+                    countries: [...result]
+                })
             }
         }
     }
+
 
     render(){
         const { totalCases, totalRecovered, totalDead, countries} = this.state

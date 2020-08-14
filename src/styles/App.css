@@ -1,3 +1,260 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0;
 }
+
+body{
+  margin: 0 auto;
+  width: 100%;
+  background-color:#0b0c10;
+  color: white;
+}
+
+.header{
+  margin: 0 auto;
+  max-width: fit-content;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-size: 130%;
+  color: white
+}
+
+.globalCard{
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 60%;
+  border-radius: 10px;
+  border: 1.5px solid #45a29e;
+  margin-top: 3%;
+  margin-bottom: 1%;
+  padding: 1.5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.globalStat{
+  width: fit-content;
+  position: relative;
+  padding: 3%;
+  background-color: #1f2833;
+  border-radius: 15px;
+  color: #66fcf1;
+}
+
+.globalStat>h4{
+  text-align: left;
+  position: absolute; 
+  top: 6%; left: 6%; 
+  bottom: 10%;
+  font-weight: bold;
+}
+
+.globalCard span{
+  font-size: 127%;
+  font-weight: bolder;
+}
+
+.container{
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.countryStatsSection{
+  padding-right: 4%;
+  padding-left: 4%;
+  padding-bottom: 1.5%;
+  border-radius: 10px;
+  background-color: #1f2833;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#statsTable{
+  padding-top: 10px;
+  padding: 1%;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-size: 120%;
+  border-collapse: collapse;
+  border: 1.5px solid #45a29e;
+  background-color: #1f2833;
+}
+
+th, td{
+  padding: 20px;
+  text-align: left; 
+  border-bottom: 1px solid #45a29e;
+}
+
+
+tr, tr>th {
+  background-color: #1f2833;
+  color: white;
+  cursor: pointer;
+}
+
+#statsTable tr:hover{
+  color: #1f2833;
+  background-color: #c5c6c7;
+}
+
+caption {
+  font-size: 120%;  
+  margin-top: 20px;
+  text-align: left;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+
+.searchSection{
+  width: 100%;
+  margin: 0 auto;
+  text-align: right;
+  padding-top: 2%;
+  padding-bottom: 6px;
+  opacity: 1;
+  border: 3px #3d323f;
+}
+
+#searchBar{
+  width: 27%;
+  padding: 10px;
+  font-size: 110%;
+  border: none;
+  border-bottom: 2px solid #1f2833;
+  background-color: #1f2833;
+  transition: width 0.4s ease-in-out;
+  color: white;
+  outline: none;
+}
+
+#searchBar:focus{
+  color: white;
+  border-bottom: 2px solid #45a29e;
+  width: 67%; 
+}
+
+@media only screen and (max-width: 600px) {
+  *{
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  .header{
+    margin: 0 auto;
+    text-align: center;
+    max-width: fit-content;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 90%;
+    color: white;
+  }
+
+   
+  .globalCard{
+    text-align: center;
+    width: 90%;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .globalStat{
+    width:100%;
+    text-align: center;
+    position: relative;
+    padding: 8%;
+    background-color: #0b0c10;
+    color: #66fcf1;
+  }
+
+  .globalHeader{
+    width: 100%;
+    text-align: left;   
+  }
+
+  .globalHeader>h2{
+    font-size: 107%;
+    font-weight: lighter;
+  }
+
+  .globalStat>h4{
+    padding-bottom: 0;
+    position: absolute; 
+    top: 50%; left: 0;
+    text-align: center; 
+    font-weight: bold;
+  }
+  
+  .globalCard span{
+    font-size: 107%;
+    position: absolute; 
+    top: 50%; 
+    font-weight: bolder;
+  }
+
+  .container{
+    width:100%;
+    margin: 0;
+  }
+
+  .countryStatsSection{
+    background-color: #0b0c10;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  #statsTable{
+    max-width: fit-content;
+    font-size: 80%;
+    padding: 0;
+  }
+
+  th, td{
+    padding: 4%;
+  }
+  
+  caption {
+      color: white;
+      font-size: 120%;  
+      text-align: left; 
+      font-weight: lighter;
+  }
+
+  .searchSection{
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 0;
+    padding-left: 2%;
+    }
+
+  #searchBar{
+    text-align: left;
+    width: 100%;
+    font-size: 100%;
+    transition:	none;
+    border-bottom: 2px solid white;  
+  }
+
+  #searchBar:focus{
+      width: 100%;  
+      border-bottom: 2px solid #45a29e;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+  .globalCard{
+    width: 80%;
+  }
+}
+

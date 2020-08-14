@@ -9,4 +9,5 @@ Create a monitoring dashboard for corona virus, using this [API](https://documen
 - User should be able to search for countries.
 - User should be able to rank countries in order.
 
-
+## To get project:
+- clone the repo using `git clone https://github.com/d-rita/SCAMP-Assessment.git ` 

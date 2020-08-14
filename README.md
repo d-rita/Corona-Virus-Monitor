@@ -10,4 +10,10 @@ Create a monitoring dashboard for corona virus, using this [API](https://documen
 - User should be able to rank countries in order.
 
 ## To get project:
-- clone the repo using `git clone https://github.com/d-rita/SCAMP-Assessment.git ` 
+- Clone the repo onto your local machine using `git clone -b develop https://github.com/d-rita/SCAMP-Assessment.git monitoring-dashboard` 
+- Change into the project directory using `cd monitoring-dashboard`
+- Install node packages required for the project using `npm install` or `yarn install`
+- Start the app using `npm run start` or `yarn start`
+
+#### Hosting:
+This app is hosted using netlify and can be found [here]()

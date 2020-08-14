@@ -16,4 +16,4 @@ Create a monitoring dashboard for corona virus, using this [API](https://documen
 - Start the app using `npm run start` or `yarn start`
 
 #### Hosting:
-This app is hosted using netlify and can be found [here]()
+This app is hosted using netlify and can be found [here](https://dritacoviddashboard.netlify.app/)

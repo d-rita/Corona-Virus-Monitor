@@ -1,4 +1,4 @@
-# SCAMP ASSESSMENT: Monitoring Dashboard
+# Corona Virus Monitoring Dashboard
 
 ## Task:
 Create a monitoring dashboard for corona virus, using this [API](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest) here.

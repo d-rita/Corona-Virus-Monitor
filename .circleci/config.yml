@@ -1,0 +1,36 @@
+version: 2.1
+jobs:
+  deploy:
+    working_directory: /home/circleci/app
+    docker:
+    - image: circleci/python:3.7-buster-node  ## Use an image that comes with the environment we want to run the script with. 
+    steps:
+    - checkout
+    - setup_remote_docker
+    - run:
+        name: Install modules
+        command: |
+          sudo apt-get update
+    - run:
+        name: Set folder permissions          ## may not be necessary but adding just in case
+        command: |
+          chown -R circleci:circleci ${CIRCLE_WORKING_DIRECTORY}
+          chmod -R 755 ${CIRCLE_WORKING_DIRECTORY}
+    - deploy: 
+        name: Run script to zip files
+        command: |
+          cd ${CIRCLE_WORKING_DIRECTORY}/src
+          for folder in */; do zip -r "${folder%/}.zip" "$folder" -x '/*styles/*'; done
+          mkdir zipped
+          mv *.zip zipped
+          echo "Deployed"
+workflows:
+  version: 2
+  deploy:
+    jobs:
+    - deploy:
+        filters:                              ## ensures only runs script when new commits sent to master
+          branches:
+            only:
+            - develop
+            - ch-circleci

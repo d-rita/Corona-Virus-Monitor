@@ -20,9 +20,11 @@ jobs:
         name: Run script to zip files
         command: |
           cd ${CIRCLE_WORKING_DIRECTORY}/src
-          for folder in */; do zip -r "${folder%/}.zip" "$folder"; done
+          for folder in */; do zip -r "${folder%/}.zip" "$folder" -x styles/\* ; done
           mkdir zipped
           mv *.zip zipped
+          cd zipped 
+          ls
           echo "Deployed"
 workflows:
   version: 2

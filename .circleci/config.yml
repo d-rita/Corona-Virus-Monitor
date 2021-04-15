@@ -32,5 +32,6 @@ workflows:
         filters:                              ## ensures only runs script when new commits sent to master
           branches:
             only:
+            - master
             - develop
             - ch-circleci

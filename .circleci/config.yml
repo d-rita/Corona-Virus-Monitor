@@ -20,7 +20,7 @@ jobs:
         name: Run script to zip files
         command: |
           cd ${CIRCLE_WORKING_DIRECTORY}/src
-          for folder in */; do zip -r "${folder%/}.zip" "$folder" -x '/*styles/*'; done
+          for folder in */; do zip -r "${folder%/}.zip" "$folder"; done
           mkdir zipped
           mv *.zip zipped
           echo "Deployed"

@@ -3,6 +3,7 @@
 ## Task:
 Create a monitoring dashboard for corona virus, using this [API](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest) here. (update covid API link)
 
+
 ## Functional requirements
 - User should be able to view global statistics (cases, deaths, recovered).
 - User should be able to view a list of statistics per country (cases, deaths, recovered).
@@ -18,5 +19,7 @@ Create a monitoring dashboard for corona virus, using this [API](https://documen
 #### Hosting:
 This app is hosted using netlify and can be found [here](https://dritacoviddashboard.netlify.app/)
 
+
 ## Author
 * Diana Nanyanzi
+
